@@ -11,8 +11,8 @@ function App() {
   return (
     <Grid
       templateAreas={{
-        base: `"nav" "main"`, //on mobile screen
-        lg: `"nav nav" "aside main"`, //on large screen
+        base: `"nav" "main"`,
+        lg: `"nav nav" "aside main"`,
       }}
       templateColumns={{
         base: "1fr",
@@ -24,9 +24,13 @@ function App() {
       </GridItem>
       <Show above="lg">
         <GridItem area="aside" paddingX={5}>
-          <GenreList onSelectedGenre={(genre) => setSelectedGenre(genre)} />
+          <GenreList
+            selectedGenre={selectedGenre}
+            onSelectedGenre={(genre) => setSelectedGenre(genre)}
+          />
         </GridItem>
       </Show>
+      <GridItem area="main">
         <GameGrid selectedGenre={selectedGenre} />
       </GridItem>
     </Grid>
