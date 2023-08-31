@@ -7,7 +7,7 @@ import {
   Button,
   Heading,
 } from "@chakra-ui/react";
-import { is } from "immer/dist/internal";
+import { isDraft } from "immer";
 import useGenres, { Genre } from "../hooks/useGenres";
 import getCroppedImageUrl from "../services/image-url";
 
